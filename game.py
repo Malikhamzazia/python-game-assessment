@@ -1,6 +1,6 @@
 import random
 
-
+# Ask the user for their name and return it
 def get_player_name():
     """Ask the player for their name."""
     name = input("What is your name? ")
@@ -66,9 +66,12 @@ def want_to_play_again():
 
 
 def main():
-    print("===================================")
-    print("  Welcome to the Number Guessing Game!")
-    print("===================================\n")
+    print("\n==============================")
+    print("     NUMBER GUESSING GAME     ")
+    print("==============================\n")
+    print("Guess the number between 1 and 100!")
+    print("You have 10 attempts.\n")
+
 
     player_name = get_player_name()
     print(f"\nHello, {player_name}! I'm thinking of a number between 1 and 100.")
