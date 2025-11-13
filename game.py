@@ -72,6 +72,10 @@ def main():
     print("Guess the number between 1 and 100!")
     print("You have 10 attempts.\n")
 
+    total_games = 0
+    games_won = 0
+
+
 
     player_name = get_player_name()
     print(f"\nHello, {player_name}! I'm thinking of a number between 1 and 100.")
@@ -81,14 +85,22 @@ def main():
         secret_number = random.randint(1, 100)
         won = play_round(secret_number)
 
+        # Track game statistics
+        total_games += 1
+        if won:
+            games_won += 1
+
         if won:
             print(f"Great job, {player_name}!")
         else:
             print(f"Nice try, {player_name}! You'll get it next time.")
 
         if not want_to_play_again():
-            print("\nThanks for playing! Goodbye")
+            print(f"\nYou played {total_games} game(s).")
+            print(f"You won {games_won} game(s).")
+            print("Thanks for playing! Goodbye!")
             break
+
 
 
 if __name__ == "__main__":
